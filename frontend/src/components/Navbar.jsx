@@ -14,7 +14,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
 
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold tracking-wide">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-wide">
             Inventory Manager
           </h1>
 
@@ -22,30 +22,46 @@ function Navbar() {
             className="md:hidden text-3xl"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            ☰
+            {menuOpen ? "✕" : "☰"}
           </button>
         </div>
 
         <div
           className={`
             ${menuOpen ? "flex" : "hidden"}
-            flex-col gap-4 mt-4
+            flex-col gap-2 mt-4
             md:flex md:flex-row md:gap-6 md:mt-0
           `}
         >
-          <NavLink to="/" className={linkClass}>
+          <NavLink
+            to="/"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Dashboard
           </NavLink>
 
-          <NavLink to="/products" className={linkClass}>
+          <NavLink
+            to="/products"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Products
           </NavLink>
 
-          <NavLink to="/customers" className={linkClass}>
+          <NavLink
+            to="/customers"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Customers
           </NavLink>
 
-          <NavLink to="/orders" className={linkClass}>
+          <NavLink
+            to="/orders"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
             Orders
           </NavLink>
         </div>
