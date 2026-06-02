@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <nav className="bg-slate-950 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <nav className="bg-slate-950 text-white shadow-lg relative">
 
         <div className="flex items-center justify-between">
           <h1 className="text-2xl md:text-3xl font-bold tracking-wide">
@@ -26,13 +26,18 @@ function Navbar() {
           </button>
         </div>
 
-        <div
-          className={`
-            ${menuOpen ? "flex" : "hidden"}
-            flex-col gap-2 mt-4
-            md:flex md:flex-row md:gap-6 md:mt-0
-          `}
-        >
+          <div
+            className={`
+              ${menuOpen ? "flex" : "hidden"}
+              absolute top-full left-0 w-full
+              flex-col gap-3
+              bg-slate-900
+              p-4 shadow-lg
+              md:static md:flex md:flex-row
+              md:bg-transparent md:p-0 md:shadow-none
+              md:w-auto md:gap-6
+            `}
+          >
           <NavLink
             to="/"
             className={linkClass}
