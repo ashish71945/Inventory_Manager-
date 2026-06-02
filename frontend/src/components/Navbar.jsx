@@ -6,12 +6,12 @@ function Navbar() {
 
   const linkClass = ({ isActive }) =>
     isActive
-      ? "text-white font-semibold border-l-4 border-blue-400 pl-3"
-      : "text-slate-300 hover:text-white pl-3";
+      ? "text-white font-semibold border-l-4 border-blue-400 pl-3 py-2 bg-slate-800 rounded-r"
+      : "text-slate-300 hover:text-white pl-3 py-2";
 
   return (
     <nav className="bg-slate-950 text-white shadow-lg relative">
-      
+
       {/* Overlay */}
       {menuOpen && (
         <div
@@ -22,14 +22,14 @@ function Navbar() {
 
       {/* Navbar */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
+
         <h1 className="text-2xl md:text-3xl font-bold tracking-wide">
           Inventory Manager
         </h1>
 
         {/* Hamburger */}
         <button
-          className="md:hidden text-3xl z-50 p-1"
+          className="md:hidden text-3xl z-[60] p-1"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? "✕" : "☰"}
@@ -60,14 +60,17 @@ function Navbar() {
         className={`
           fixed top-[72px] right-0
           h-[calc(100vh-72px)]
-          w-48
-          bg-slate-900 shadow-xl z-50
+          w-44
+          bg-slate-900
+          shadow-xl
+          z-50
           transform transition-transform duration-300
           ${menuOpen ? "translate-x-0" : "translate-x-full"}
           md:hidden
         `}
       >
-        <div className="flex flex-col gap-8 p-5 text-lg">
+        <div className="flex flex-col gap-5 p-4 text-lg">
+
           <NavLink
             to="/"
             className={linkClass}
@@ -99,8 +102,10 @@ function Navbar() {
           >
             Orders
           </NavLink>
+
         </div>
       </div>
+
     </nav>
   );
 }
