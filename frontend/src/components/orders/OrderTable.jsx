@@ -4,9 +4,8 @@ function OrderTable({
   products,
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-
-      <table className="w-full">
+    <div className="bg-white rounded-lg shadow-md overflow-x-auto">
+      <table className="w-full min-w-[700px]">
 
         <thead className="bg-slate-100">
           <tr>
