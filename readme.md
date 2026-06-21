@@ -76,4 +76,4 @@ http://localhost:5173
 
 ## Author
 
-Mahendra Pratap Singh
+Ashish kumar Singh
